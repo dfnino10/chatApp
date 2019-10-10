@@ -27,10 +27,10 @@ const TextBox = () => {
   };
 
   return (
-    <label>
+    <label className="chatbox">
       <input
         type='text'
-        className='message-input'
+        className='message-input chatbox'
         value={message}
         ref={inRef}
         onChange={onChangeInutMessage}
