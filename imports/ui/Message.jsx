@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // Task component - represents a single todo item
 const Message = (props) => {
   return (
-    <li>{props.message.text}</li>
+    <li>{props.message.message}</li>
   );
 };
 

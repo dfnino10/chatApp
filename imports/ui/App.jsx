@@ -7,9 +7,12 @@ import { Messages } from '../api/messages.js';
 
 import PropTypes from 'prop-types';
 
+import { Meteor } from 'meteor/meteor';
+
 const App = (props) => {
 
   const renderMessages = () => {
+    console.log('Messages', props.messages);
     return props.messages.map( msg => (
       <Message key={msg._id} message={msg} />
     ));
@@ -37,6 +40,8 @@ App.propTypes = {
 };
 
 export default withTracker(() => {
+  Meteor.subscribe('messages');
+
   return {
     messages: Messages.find({}).fetch(),
   };

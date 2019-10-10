@@ -23,7 +23,7 @@ const TextBox = () => {
 
   const sendMessage = () => {
     Meteor.call('messages.insert', message);
-    console.log('Message', message);
+    setName('');
   };
 
   return (
