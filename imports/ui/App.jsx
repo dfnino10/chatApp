@@ -1,30 +1,43 @@
 import React from 'react';
 import Message from './Message.jsx';
+import TextBox from './TextBox.jsx';
+import { withTracker } from 'meteor/react-meteor-data';
 
-const App = () => {
+import { Messages } from '../api/messages.js';
 
-  const getMessages = () => {
-    return [
-      { _id: 1, text: 'Message 1' },
-      { _id: 2, text: 'Message 2' },
-      { _id: 3, text: 'Message 3' },
-    ];
-  };
+import PropTypes from 'prop-types';
+
+const App = (props) => {
 
   const renderMessages = () => {
-    return getMessages().map((msg) => (
+    return props.messages.map( msg => (
       <Message key={msg._id} message={msg} />
     ));
   };
 
   return (
     <div>
-      <h1>Chatting App!</h1>
-      <ul>
-        {renderMessages()}
-      </ul>
+      <header>
+        <h1>Chatting App!</h1>
+      </header>
+      <main>
+        <ul>
+          {renderMessages()}
+        </ul>
+      </main>
+      <div className='textBox'>
+        <TextBox></TextBox>
+      </div>
     </div>
   );
 };
 
-export default App;
+App.propTypes = {
+  messages : PropTypes.arrayOf(PropTypes.object),
+};
+
+export default withTracker(() => {
+  return {
+    messages: Messages.find({}).fetch(),
+  };
+})(App);
