@@ -27,7 +27,9 @@ const TextBox = () => {
   };
 
   return (
-    <label className="chatbox">
+    <label className="chatwrapper">
+    <div className="row">
+    <div className="col-md-11">
       <input
         type='text'
         className='message-input chatbox'
@@ -36,7 +38,11 @@ const TextBox = () => {
         onChange={onChangeInutMessage}
         onKeyPress={handleKeyPress}
       />
-      <input type='submit' value='Send' onClick={handleClick}/>
+    </div>
+    <div className="col-md-1">
+      <input className="btn btn-primary" type='submit' value='💬' onClick={handleClick}/>
+    </div>
+    </div>
     </label>
   );
 };
