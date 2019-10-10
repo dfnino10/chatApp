@@ -27,7 +27,7 @@ const TextBox = () => {
   };
 
   return (
-    <form>
+    <label>
       <input
         type='text'
         className='message-input'
@@ -37,7 +37,7 @@ const TextBox = () => {
         onKeyPress={handleKeyPress}
       />
       <input type='submit' value='Send' onClick={handleClick}/>
-    </form>
+    </label>
   );
 };
 

@@ -27,10 +27,10 @@ const App = (props) => {
         <ul>
           {renderMessages()}
         </ul>
+        <div className='textBox'>
+          <TextBox></TextBox>
+        </div>
       </main>
-      <div className='textBox'>
-        <TextBox></TextBox>
-      </div>
     </div>
   );
 };
