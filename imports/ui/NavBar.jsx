@@ -1,5 +1,4 @@
 import React from 'react';
-import AccountsUIWrapper from './AccountsUIWrapper.jsx';
 
 const NavBar = () => {
 
@@ -21,16 +20,7 @@ const NavBar = () => {
         </div>
       </nav>
 
-      <div className="wrapper">
-        <nav id="sidebar">
-          <ul className="list-unstyled components">
-            <li className="active">
-              <AccountsUIWrapper></AccountsUIWrapper>
-            </li>
-          </ul>
-        </nav>
-
-      </div>
+      
     </div>
   );
 };

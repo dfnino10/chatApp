@@ -14,7 +14,7 @@ Meteor.methods({
   'messages.insert'(message){
     Messages.insert({
       message,
-      sentAt: new Date(),
+      sentAt: new Date()
     });
   }
 });

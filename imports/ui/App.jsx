@@ -10,10 +10,14 @@ import PropTypes from 'prop-types';
 
 import { Meteor } from 'meteor/meteor';
 
+import AccountsUIWrapper from './AccountsUIWrapper.jsx';
+
+
 const App = (props) => {
 
   const renderMessages = () => {
     console.log('Messages', props.messages);
+    console.log(props);
     return props.messages.map( msg => (
       <ul key={msg._id}>
         <li key={msg._id}>
@@ -29,14 +33,27 @@ const App = (props) => {
         <NavBar></NavBar>
       </header>
       <br/>
-      <main>
+      <div className="row">
+        <nav id="sidebar" className="col-md-3">
+          <ul className="list-unstyled components">
+            <li className="active">
+              <AccountsUIWrapper></AccountsUIWrapper>
+            </li>
+          </ul>
+        </nav>
+
+      
+      <main className="col-md-9">
         <ul>
           {renderMessages()}
         </ul>
         <div className='textBox'>
-          <TextBox></TextBox>
+
+          <TextBox user={props.user}></TextBox>
+          
         </div>
       </main>
+      </div>
     </div>
   );
 };

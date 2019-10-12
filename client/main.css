@@ -79,3 +79,12 @@ body {
   border-radius: .6em;
   background: #77bcf7;
 }
+
+.hour{
+  font-size: 10pt;
+}
+
+.explicitmessage{
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  font-size: 11pt;
+}
