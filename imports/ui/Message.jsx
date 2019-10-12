@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 const Message = (props) => {
   return (
     <div>
-    <div className="row speech-bubble limit">
-      <div className="col-md-11">{props.message.message}</div>
-      <div className="col-md-1">{props.message.sentAt.getHours()+":"+props.message.sentAt.getMinutes()}</div>
-    </div>
-    <br/>
+      <div className="row speech-bubble limit">
+        <div className="col-md-11">{props.message.message}</div>
+        {<div className="col-md-1">{props.message.sentAt.getHours()+":"+props.message.sentAt.getMinutes()}</div>}
+      </div>
+      <br/>
     </div>
   );
 };

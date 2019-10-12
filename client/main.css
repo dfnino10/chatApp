@@ -1,3 +1,32 @@
+.content {
+  width: 100%;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+
 body {
   padding: 10px;
   font-family: sans-serif;
@@ -5,7 +34,7 @@ body {
 
 .speech-bubble {
   position: relative;
-  background: #0275d8;
+  background: #77bcf7;
   border-radius: .4em;
 }
 
@@ -46,7 +75,7 @@ body {
   border-radius: .4em;
 }
 
-.sendbtn{
+.btn.btn-primary.sendbtn{
   border-radius: .6em;
-  background: #007bff;
+  background: #77bcf7;
 }

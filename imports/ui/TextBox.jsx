@@ -28,21 +28,21 @@ const TextBox = () => {
 
   return (
     <label className="chatwrapper">
-    <div className="row">
-    <div className="col-md-11">
-      <input
-        type='text'
-        className='message-input chatbox'
-        value={message}
-        ref={inRef}
-        onChange={onChangeInutMessage}
-        onKeyPress={handleKeyPress}
-      />
-    </div>
-    <div className="col-md-1">
-      <input className="btn btn-primary" type='submit' value='💬' onClick={handleClick}/>
-    </div>
-    </div>
+      <div className="row">
+        <div className="col-md-11">
+          <input
+            type='text'
+            className='message-input chatbox'
+            value={message}
+            ref={inRef}
+            onChange={onChangeInutMessage}
+            onKeyPress={handleKeyPress}
+          />
+        </div>
+        <div className="col-md-1">
+          <input className="btn btn-primary sendbtn" type='submit' value='💬' onClick={handleClick}/>
+        </div>
+      </div>
     </label>
   );
 };

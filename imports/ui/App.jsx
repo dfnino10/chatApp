@@ -1,6 +1,7 @@
 import React from 'react';
 import Message from './Message.jsx';
 import TextBox from './TextBox.jsx';
+import NavBar from './NavBar.jsx';
 import { withTracker } from 'meteor/react-meteor-data';
 
 import { Messages } from '../api/messages.js';
@@ -14,15 +15,20 @@ const App = (props) => {
   const renderMessages = () => {
     console.log('Messages', props.messages);
     return props.messages.map( msg => (
-      <Message key={msg._id} message={msg} />
+      <ul key={msg._id}>
+        <li key={msg._id}>
+          <Message key={msg._id} message={msg} />
+        </li>
+      </ul>
     ));
   };
 
   return (
     <div>
       <header>
-        <h1>Chatting App!</h1>
+        <NavBar></NavBar>
       </header>
+      <br/>
       <main>
         <ul>
           {renderMessages()}
