@@ -49,6 +49,7 @@ export default withTracker(() => {
   Meteor.subscribe('messages');
 
   return {
+    user: Meteor.user(),
     messages: Messages.find({}).fetch(),
   };
 })(App);
