@@ -24,7 +24,7 @@ const App = (props) => {
   };
 
   return (
-    <div>
+    <div className='container-fluid'>
       <header>
         <NavBar></NavBar>
       </header>

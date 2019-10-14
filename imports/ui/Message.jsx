@@ -6,8 +6,7 @@ const Message = (props) => {
   return (
     <div>
       <div className="row speech-bubble limit">
-        <div className="col-md-11">{props.message.message}</div>
-        {<div className="col-md-1">{props.message.sentAt.getHours()+":"+props.message.sentAt.getMinutes()}</div>}
+        <div className="col-md-8">{props.message.sentAt.getHours()+':'+props.message.sentAt.getMinutes()+'  '+props.message.message}</div>
       </div>
       <br/>
     </div>
