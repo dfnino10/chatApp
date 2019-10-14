@@ -1,19 +1,22 @@
-import React from 'react';
-import Message from './Message.jsx';
-import TextBox from './TextBox.jsx';
-import NavBar from './NavBar.jsx';
-import { withTracker } from 'meteor/react-meteor-data';
+import React from "react";
+import Message from "./Message.jsx";
+import TextBox from "./TextBox.jsx";
+import NavBar from "./NavBar.jsx";
+import { withTracker } from "meteor/react-meteor-data";
 
-import { Messages } from '../api/messages.js';
+import { Messages } from "../api/messages.js";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import { Meteor } from 'meteor/meteor';
+import { Meteor } from "meteor/meteor";
+
+import AccountsUIWrapper from "./AccountsUIWrapper.jsx";
+
 
 const App = (props) => {
 
   const renderMessages = () => {
-    console.log('Messages', props.messages);
+    console.log("Messages", props.messages);
     return props.messages.map( msg => (
       <ul key={msg._id}>
         <li key={msg._id}>
@@ -24,29 +27,43 @@ const App = (props) => {
   };
 
   return (
-    <div className='container-fluid'>
+    <div className="container-fluid">
       <header>
         <NavBar></NavBar>
       </header>
       <br/>
-      <main>
-        <ul>
-          {renderMessages()}
-        </ul>
-        <div className='textBox'>
-          <TextBox></TextBox>
-        </div>
-      </main>
+      <div className="row">
+        <nav id="sidebar" className="col-md-3">
+          <ul className="list-unstyled components">
+            <li className="active">
+              <AccountsUIWrapper></AccountsUIWrapper>
+            </li>
+          </ul>
+        </nav>
+
+
+        <main className="col-md-9">
+          <ul className="ul">
+            {renderMessages()}
+          </ul>
+          <div className="textBox">
+
+            <TextBox></TextBox>
+
+          </div>
+        </main>
+      </div>
     </div>
   );
 };
+
 
 App.propTypes = {
   messages : PropTypes.arrayOf(PropTypes.object),
 };
 
 export default withTracker(() => {
-  Meteor.subscribe('messages');
+  Meteor.subscribe("messages");
 
   return {
     user: Meteor.user(),

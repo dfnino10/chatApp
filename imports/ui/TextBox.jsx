@@ -22,7 +22,10 @@ const TextBox = () => {
   };
 
   const sendMessage = () => {
-    Meteor.call('messages.insert', message);
+    if(Meteor.user()){
+      user = Meteor.user().username;
+    }
+    Meteor.call('messages.insert', message, user);
     setName('');
   };
 

@@ -12,7 +12,7 @@ const AccountsUIWrapper = () => {
       Blaze.remove(view);
     };
   });
-  return (<span ref={refTarget} />);
+  return (<span className="btn" ref={refTarget} />);
 };
 
 export default AccountsUIWrapper;
