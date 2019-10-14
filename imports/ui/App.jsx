@@ -17,7 +17,6 @@ const App = (props) => {
 
   const renderMessages = () => {
     console.log('Messages', props.messages);
-    console.log(props);
     return props.messages.map( msg => (
       <ul key={msg._id}>
         <li key={msg._id}>
@@ -44,12 +43,12 @@ const App = (props) => {
 
       
       <main className="col-md-9">
-        <ul>
+        <ul className="ul">
           {renderMessages()}
         </ul>
         <div className='textBox'>
 
-          <TextBox user={props.user}></TextBox>
+          <TextBox></TextBox>
           
         </div>
       </main>
@@ -57,6 +56,7 @@ const App = (props) => {
     </div>
   );
 };
+
 
 App.propTypes = {
   messages : PropTypes.arrayOf(PropTypes.object),

@@ -11,10 +11,12 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  'messages.insert'(message){
+  'messages.insert'(message, user){
+    
     Messages.insert({
       message,
-      sentAt: new Date()
+      sentAt: new Date(),
+      user
     });
   }
 });
