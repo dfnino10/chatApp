@@ -18,6 +18,8 @@ const Message = (props) => {
           </div>)
 
       ) : (
+        {/*Tener cuidado con la lógica porque esta parte del código solo funciona si se han creado mensajes anteriormente. 
+         Si uno intenta agregar un mensaje sin estar registrado sale un error en la consola diciendo que user is not defined*/}
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">Bienvenido!</h5>
