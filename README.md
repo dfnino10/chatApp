@@ -23,4 +23,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-* Inspired on the web development class teached in Universidad de los Andes
+* Inspired on the web development class teached in Universidad de los Andes  
+
