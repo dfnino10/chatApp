@@ -16,8 +16,8 @@ Open app [here](https://chat-app-web-uniandes.herokuapp.com/), then proceed to l
 
 **Version 1.0.0**
 
-## Image 
-![screenshot](https://github.com/diromero1/CoverLetter/blob/master/img/screenshot.PNG?raw=true)
+## Screenshot
+![screenshot](https://github.com/dfnino10/chatApp/blob/master/Screenshot.PNG)
 
 ## Authors
 
